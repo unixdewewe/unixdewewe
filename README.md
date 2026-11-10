@@ -1,40 +1,59 @@
-# Hi there, I'm unixdewewe 👋
+<#
+.SYNOPSIS
+    GitHub Profile & Repository Manifest - unixdewewe
+.DESCRIPTION
+    Cybersecurity Engineer | Purple Team Operator | Automation & Tooling Specialist
+.NOTES
+    File Name      : README.md
+    Author         : unixdewewe
+    Core Focus     : Offensive Security, Defensive Detection, & Cross-Platform Scripting
+#>
 
-<img src="https://komarev.com/ghpvc/?username=unixdewewe&color=blueviolet&style=flat-square" alt="Profile Views" />
+class SecurityOperator {
+    [string]$Alias          = "unixdewewe"
+    [string]$PrimaryRole    = "Cybersecurity Engineer & Purple Team Operator"
+    [string[]]$CoreStack    = @("Python (OOP/CLI)", "PowerShell", "Bash")
+    [string[]]$Capabilities = @(
+        "Red and Blue Team Operations (Purple Teaming)",
+        "Static Malware Analysis & YARA Rule Engineering",
+        "Vulnerability Assessment & Penetration Testing (VAPT)",
+        "Threat Intelligence Integration (VirusTotal, MITRE ATT&CK)"
+    )
+}
 
-### 🛡️ Cybersecurity Engineer, Purple Team Operator & Software Craftsman
+function Initialize-ProfileTelemetry {
+    [CmdletBinding()]
+    param()
 
-Welcome to my GitHub profile! I am a cybersecurity professional specializing in **Purple Teaming**—seamlessly bridging offensive security (Red Team) and defensive detection engineering (Blue Team). Alongside tactical operations, I focus on building robust security tooling, automating workflows with **Bash** and **PowerShell**, and engineering advanced static analysis pipelines. My work centers on clean architectural design, modular Python development, and translating threat intelligence into actionable defense.
+    $Operator = [SecurityOperator]::new()
 
----
+    Write-Host "[+] Loading profile telemetry for: $($Operator.Alias)" -ForegroundColor Cyan
+    Write-Host "[+] Designation: $($Operator.PrimaryRole)" -ForegroundColor Green
+    
+    $TechStack = [PSCustomObject]@{
+        "Languages & Scripting" = ($Operator.CoreStack -join ", ")
+        "Security Domains"      = "Purple Teaming, VAPT, Log Analysis"
+        "Threat Intelligence"   = "YARA, MITRE ATT&CK, VirusTotal API"
+        "Infrastructure"        = "Apache HTTPD, Tomcat Hardening"
+    }
 
-### 💻 Core Expertise & Tech Stack
+    return $TechStack
+}
 
-* **Languages & Scripting:** Python (Object-Oriented Architecture, CLI Tooling), Bash, PowerShell
-* **Offensive & Defensive Security (Purple Team):** Red/Blue Team Operations, Vulnerability Assessment & Penetration Testing (VAPT), Log Analysis & Incident Review
-* **Threat Intelligence & Analysis:** Static Malware Analysis, YARA Rule Development, MITRE ATT&CK Framework Mapping, VirusTotal API Integration
-* **Infrastructure & Hardening:** Secure Server Configuration (Apache HTTPD, Tomcat), Network & Infrastructure Management
+# Execute profile telemetry check
+$Telemetry = Initialize-ProfileTelemetry
+$Telemetry | Format-List
 
----
-
-### 🛠️ Featured Projects & Focus
-
-* **[advanced-static-analyzer](https://github.com/unixdewewe/advanced-static-analyzer):** A structured command-line utility designed for recursive inspection of ZIP and JAR archives, metadata parsing, indicator of compromise (IOC) extraction, and heuristic base64/obfuscation decoding with YARA and MITRE ATT&CK mapping.
-* **Cross-Platform Security Scripting:** Developing efficient automation scripts and tooling in **Bash** and **PowerShell** for reconnaissance, incident triage, and system hardening across multiple environments.
-* **Purple Team Operations:** Simulating adversary tactics while simultaneously hardening detection mechanisms to continuously validate organizational security posture.
-
----
-
-### 📊 GitHub Stats
-
-<p>
-  <img src="https://github-readme-stats.vercel.app/api?username=unixdewewe&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="unixdewewe's GitHub stats" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=unixdewewe&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" width="48%" />
-</p>
-
----
-
-### 🌐 Connect With Me
-
-* **GitHub:** [github.com/unixdewewe](https://github.com/unixdewewe)
-* **Professional Focus:** Purple team operations, cross-platform security automation, and secure software architecture.
+<#
+    ========================================================================
+    FEATURED REPOSITORIES & PROJECTS
+    ========================================================================
+    1. advanced-static-analyzer: Structured CLI utility for recursive ZIP/JAR 
+       inspection, metadata parsing, IOC extraction, and heuristic base64/obfuscation 
+       decoding with YARA & MITRE ATT&CK mapping.
+    2. Cross-Platform Scripting: Custom PowerShell and Bash automation suites 
+       for rapid reconnaissance, log triage, and system hardening.
+    3. Purple Team Frameworks: Adversary simulation coupled with detection rule 
+       engineering to validate and patch organizational defenses.
+    ========================================================================
+#>
