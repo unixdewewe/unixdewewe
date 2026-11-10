@@ -1,61 +1,51 @@
 ```powershell
+
 <#
 .SYNOPSIS
-    GitHub Profile & Repository Manifest - unixdewewe
+    System Profile & Repository Manifest - unixdewewe
 .DESCRIPTION
-    Cybersecurity Engineer | Purple Team Operator | Automation & Tooling Specialist
-.NOTES
-    File Name      : README.md
-    Author         : unixdewewe
-    Core Focus     : Offensive Security, Defensive Detection, & Cross-Platform Scripting
+    Cybersecurity Engineer | Purple Team Operator | Automation Architect
 #>
 
-class SecurityOperator {
-    [string]$Alias          = "unixdewewe"
-    [string]$PrimaryRole    = "Cybersecurity Engineer & Purple Team Operator"
-    [string[]]$CoreStack    = @("Python (OOP/CLI)", "PowerShell", "Bash")
-    [string[]]$Capabilities = @(
-        "Red and Blue Team Operations (Purple Teaming)",
-        "Static Malware Analysis & YARA Rule Engineering",
-        "Vulnerability Assessment & Penetration Testing (VAPT)",
-        "Threat Intelligence Integration (VirusTotal, MITRE ATT&CK)"
-    )
+class SecurityContext {
+    [string]$Handle      = "unixdewewe"
+    [string]$Specialty   = "Purple Teaming & Automated Security Tooling"
+    [string[]]$Languages = @("Python", "PowerShell", "Bash")
+    [string[]]$CoreOps   = @("Red/Blue Operations", "Static Analysis", "VAPT")
 }
 
-function Initialize-ProfileTelemetry {
+function Get-OperatorTelemetry {
     [CmdletBinding()]
     param()
 
-    $Operator = [SecurityOperator]::new()
-
-    Write-Host "[+] Loading profile telemetry for: $($Operator.Alias)" -ForegroundColor Cyan
-    Write-Host "[+] Designation: $($Operator.PrimaryRole)" -ForegroundColor Green
+    $Ctx = [SecurityContext]::new()
     
-    $TechStack = [PSCustomObject]@{
-        "Languages & Scripting" = ($Operator.CoreStack -join ", ")
-        "Security Domains"      = "Purple Teaming, VAPT, Log Analysis"
-        "Threat Intelligence"   = "YARA, MITRE ATT&CK, VirusTotal API"
-        "Infrastructure"        = "Apache HTTPD, Tomcat Hardening"
+    [PSCustomObject]@{
+        "Operator"   = $Ctx.Handle
+        "Focus"      = $Ctx.Specialty
+        "Scripting"  = ($Ctx.Languages -join " | ")
+        "Operations" = ($Ctx.CoreOps -join " | ")
+        "Status"     = "Active & Operational"
     }
-
-    return $TechStack
 }
 
-# Execute profile telemetry check
-$Telemetry = Initialize-ProfileTelemetry
-$Telemetry | Format-List
+Get-OperatorTelemetry | Format-List
 
 <#
-    ========================================================================
-    FEATURED REPOSITORIES & PROJECTS
-    ========================================================================
-    1. advanced-static-analyzer: Structured CLI utility for recursive ZIP/JAR 
-       inspection, metadata parsing, IOC extraction, and heuristic base64/obfuscation 
-       decoding with YARA & MITRE ATT&CK mapping.
-    2. Cross-Platform Scripting: Custom PowerShell and Bash automation suites 
-       for rapid reconnaissance, log triage, and system hardening.
-    3. Purple Team Frameworks: Adversary simulation coupled with detection rule 
-       engineering to validate and patch organizational defenses.
-    ========================================================================
+    .PROJECTS
+    --------------------------------------------------------------------
+    [01] advanced-static-analyzer
+         Modular Python CLI for recursive archive triage, IOC extraction, 
+         and heuristic obfuscation detection mapped to MITRE ATT&CK.
+         
+    [02] Security Automation Suites
+         Cross-platform PowerShell & Bash scripts engineered for rapid 
+         reconnaissance, log analysis, and system hardening.
+         
+    [03] Purple Team Triage & Defense
+         Adversary emulation frameworks integrated with real-time detection 
+         rule validation and response engineering.
+    --------------------------------------------------------------------
 #>
+
 ```
