@@ -1,3 +1,4 @@
+```powershell
 <#
 .SYNOPSIS
     GitHub Profile & Repository Manifest - unixdewewe
@@ -57,3 +58,4 @@ $Telemetry | Format-List
        engineering to validate and patch organizational defenses.
     ========================================================================
 #>
+```
